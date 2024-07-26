@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Все запросы</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>№</th>
+            <th>Дата</th>
+            <th>Описание</th>
+            <th>Ответ</th>
+            <th>Контакты</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for req in requests %}
+        <tr>
+            <td>{{ req[0] }}</td>
+            <td>{{ req[2] }}</td>
+            <td>{{ req[3] }}</td>
+            <td>{{ req[4] or 'Нет ответа' }}</td>
+            <td>{{ req[5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('index') }}" class="btn btn-primary">Главное меню</a>
+{% endblock %}
+
+</body>
+</html>

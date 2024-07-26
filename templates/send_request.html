@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Отправить запрос</h1>
+<form method="POST">
+    <div class="form-group">
+        <label for="request_text">Описание запроса</label>
+        <textarea class="form-control" id="request_text" name="request_text" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="contact_info">Контактные данные</label>
+        <input type="text" class="form-control" id="contact_info" name="contact_info" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить запрос</button>
+</form>
+<a href="{{ url_for('index') }}" class="btn btn-secondary">Главное меню</a>
+{% endblock %}
+
+</body>
+</html>
